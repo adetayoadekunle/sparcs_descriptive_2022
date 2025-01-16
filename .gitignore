@@ -169,3 +169,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# avoid uploading sparcs_2022.csv
+sparcs_2022.csv
+*.csv
