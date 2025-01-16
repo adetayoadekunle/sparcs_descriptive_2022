@@ -2,10 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Change exponents into decminals
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
 # Load csv data
-
 df = pd.read_csv('./sparcs_2022.csv')
 
 # Remove white spaces, lowercase, replace spaces with underscores, replace parentheses with empty string, and replace hyphens with underscores
@@ -82,7 +82,7 @@ print(age_group_distribution)
 
 # Bar plot for Age Group
 plt.figure(figsize=(8, 6))
-sns.barplot(x=age_group_distribution.index, y=age_group_distribution.values, palette="viridis")
+sns.barplot(x=age_group_distribution.index, y=age_group_distribution.values, palette="crest")
 plt.title('Distribution of Age Group')
 plt.xlabel('Age Group')
 plt.ylabel('Count')
@@ -96,7 +96,7 @@ print(gender_distribution)
 
 # Bar plot of Gender
 plt.figure(figsize=(8, 6))
-sns.barplot(x=gender_distribution.index, y=gender_distribution.values, palette="coolwarm")
+sns.barplot(x=gender_distribution.index, y=gender_distribution.values, palette="plasma")
 plt.title('Distribution of Gender')
 plt.xlabel('Gender')
 plt.ylabel('Count')
@@ -115,27 +115,27 @@ plt.xlabel('Type of Admission')
 plt.ylabel('Count')
 plt.show()
 
-
 # Histogram of Length of Stay
 plt.figure(figsize=(10, 6))
-sns.histplot(df['length_of_stay'], bins=20, kde=False, color='skyblue')
+sns.histplot(df['length_of_stay'], bins=20, kde=False, color='blue')
 plt.title('Histogram of Length of Stay')
 plt.xlabel('Length of Stay (Days)')
 plt.ylabel('Frequency')
 plt.show()
+
 # Boxplot of Total Charges
 plt.figure(figsize=(10, 6))
-sns.boxplot(x=df['total_charges'], color='lightgreen')
+sns.boxplot(x=df['total_charges'], color='red')
 plt.title('Boxplot of Total Charges')
 plt.xlabel('Total Charges ($)')
 plt.show()
 
 # Bar plot for Type of Admission
-plt.figure(figsize=(8, 6))  # Set the plot size
-sns.barplot(x=type_of_admission_counts.index, y=type_of_admission_counts.values, palette="pastel")
+plt.figure(figsize=(8, 6))  
+sns.barplot(x=type_of_admission_counts.index, y=type_of_admission_counts.values, palette="rocket")
 plt.title("Distribution of Type of Admission")
 plt.xlabel("Type of Admission")
 plt.ylabel("Count")
-plt.xticks(rotation=45)  # Rotate labels if they overlap
+plt.xticks(rotation=45)  
 plt.show()
 
